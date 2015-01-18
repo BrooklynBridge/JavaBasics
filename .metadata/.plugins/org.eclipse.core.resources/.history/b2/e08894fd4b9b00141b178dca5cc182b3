@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+
+public class _4_LongestIncreasingSequence {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		
+		String input = scan.nextLine();
+		String[] stringArray = input.split(" ");
+		
+		Integer[] intArray = new Integer[stringArray.length];
+		
+		for (int i = 0; i < stringArray.length; i++) {
+			intArray[i] = Integer.parseInt(stringArray[i]);
+		}
+		
+		int maxLength = 0;
+		int length = 1;
+		int startIndex = 0;
+		int minStartIndex = 0;
+		boolean newSequence = true;
+		
+		for (int i = 0; i < intArray.length - 1; i++) {
+			
+			if (intArray[i] < intArray[i + 1]) {
+				if (newSequence == true) {				
+					System.out.print(intArray[i] + " " + intArray[i + 1]);	
+					newSequence = false;
+				} else {
+					System.out.print(" " + intArray[i + 1]);
+				}				
+			}
+			else {
+				newSequence = false;
+				System.out.println();
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+
+public class _11_MostFrequentWord {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		String input = scan.nextLine();
+		input = input.toLowerCase();
+		
+		String[] words = input.split("[\\W+]");
+		
+		for (String string : words) {
+			System.out.println(string);
+		}
+
+	}
+
+}

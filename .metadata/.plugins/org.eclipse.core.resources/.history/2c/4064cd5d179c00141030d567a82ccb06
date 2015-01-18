@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class _09_CombineListsOfLetters {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		String text1 = scan.nextLine();
+		String text2 = scan.nextLine();
+		
+		ArrayList<Character> letters1 = new ArrayList<>();
+		ArrayList<Character> letters2 = new ArrayList<>();
+		
+		for (int i = 0; i < text1.length(); i++) {
+			letters1.add(text1.charAt(i));
+		}
+		
+		for (Character character : letters1) {
+			System.out.println(character);
+		}
+		
+		for (int i = 0; i < text2.length(); i++) {
+			letters2.add(text2.charAt(i));
+		}
+		
+		for (Character character : letters2) {
+			System.out.println(character);
+		}
+	}
+
+}

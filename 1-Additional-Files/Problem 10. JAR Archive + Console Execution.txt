@@ -1,0 +1,8 @@
+Windows commands
+
+1. cd desktop
+
+2. cd java homework
+
+3. java -jar SumTwoNumbers.jar
+
