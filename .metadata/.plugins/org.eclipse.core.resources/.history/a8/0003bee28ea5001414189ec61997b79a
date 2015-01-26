@@ -1,0 +1,30 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+public class _09_ListOfProducts {
+
+	public static void main(String[] args) {
+		
+		BufferedReader reader = null;
+		
+		try {
+			
+			String row = "";			
+			reader = new BufferedReader(new FileReader("Input.txt"));
+			long sum = 0;	
+			
+			while ((row = reader.readLine()) != null) {
+				sum += Integer.parseInt(row);
+			}
+			System.out.println(sum);
+			reader.close();
+			
+		} catch (IOException ex) {
+			System.out.println("Error");
+		}
+
+	}
+
+}

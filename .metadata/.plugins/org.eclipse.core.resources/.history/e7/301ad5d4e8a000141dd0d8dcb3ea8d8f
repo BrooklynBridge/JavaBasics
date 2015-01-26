@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+
+public class BreakOperator {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		int num = scan.nextInt();
+		
+		int result = 1;
+		while (true) {
+			result *= num;
+			if (num == 1) {
+				break;
+			}
+			num--;
+		}
+		
+		System.out.printf("%1d! = %2d", num, result);
+	}
+
+}

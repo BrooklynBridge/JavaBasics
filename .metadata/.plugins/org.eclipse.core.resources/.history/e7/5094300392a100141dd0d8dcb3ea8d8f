@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+import com.sun.javafx.css.CalculatedValue;
+
+
+public class Methods2 {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		double a = scan.nextDouble();
+		double b = scan.nextDouble();
+		
+		System.out.println(calcRectangleArea(a, b));
+
+	}
+	
+	public static double calcRectangleArea(double a, double b) {
+		return a * b;
+	}
+
+}

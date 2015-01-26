@@ -1,0 +1,20 @@
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class RegionalSettings {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		
+		DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.GERMAN);
+		otherSymbols.setDecimalSeparator('.');
+		
+		double a = scan.nextDouble();
+		System.out.println(a);
+		
+	}
+}

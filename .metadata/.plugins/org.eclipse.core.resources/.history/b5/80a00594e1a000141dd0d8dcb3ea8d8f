@@ -1,0 +1,21 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class RegionalSettingsProblem {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(new Locale("BG", "BG"));
+		Scanner scan = new Scanner(System.in);
+		
+		double age = scan.nextDouble();
+		System.out.println("%f\n", age);
+		
+		System.out.println(age);
+		
+		
+
+	}
+
+}

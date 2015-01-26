@@ -1,0 +1,21 @@
+import java.time.LocalDate;
+
+
+public class PrintFormatting {
+
+	public static void main(String[] args) {
+		
+		String name = "SoftUni";
+		String location = "Bulgaria";
+
+		double age = 0.5;
+		
+		System.out.printf("%s is a %.2f years old organisation located in %s", name, age, location);
+		
+		System.out.println();
+		
+		System.out.printf("Today is %1$td.%1$tm.%1$tY", LocalDate.now());
+		
+	}
+
+}

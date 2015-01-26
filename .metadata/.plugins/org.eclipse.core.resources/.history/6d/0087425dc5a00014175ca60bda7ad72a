@@ -1,0 +1,18 @@
+import java.math.BigDecimal;
+import java.util.Scanner;
+
+
+public class BigDecimalPractice {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		BigDecimal bigA = new BigDecimal(scan.nextLine());
+		BigDecimal bigB = new BigDecimal(scan.nextLine());
+		
+		BigDecimal sum = bigA.add(bigB);
+		System.out.println(sum);
+	}
+
+}

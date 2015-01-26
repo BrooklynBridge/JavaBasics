@@ -1,0 +1,27 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class ConsoleInput {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		Locale.setDefault(Locale.ROOT);
+		
+		String firstWord = scan.next("\\w+");
+		System.out.println(firstWord);
+		String secondWord = scan.next("\\w+");
+		System.out.println(secondWord);
+		
+		int numInt = scan.nextInt();
+		System.out.println(numInt);
+		
+		double numDouble1 = scan.nextDouble();
+		System.out.println(numDouble1);
+		double numDouble2 = scan.nextDouble();
+		System.out.println(numDouble2);
+	}
+
+}

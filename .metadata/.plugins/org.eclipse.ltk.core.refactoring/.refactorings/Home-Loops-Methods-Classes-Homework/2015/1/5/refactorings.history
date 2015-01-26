@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;_8_SumNumbersFromTextFile&apos; to &apos;_08_SumNumbersFromTextFile&apos;&#x0D;&#x0A;- Original project: &apos;Home-Loops-Methods-Classes-Homework&apos;&#x0D;&#x0A;- Original element: &apos;_8_SumNumbersFromTextFile&apos;&#x0D;&#x0A;- Renamed element: &apos;_08_SumNumbersFromTextFile&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;_8_SumNumbersFromTextFile&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{_8_SumNumbersFromTextFile.java[_8_SumNumbersFromTextFile" matchStrategy="1" name="_08_SumNumbersFromTextFile" qualified="false" references="true" similarDeclarations="false" stamp="1422296554394" textual="false" version="1.0"/>
+</session>
