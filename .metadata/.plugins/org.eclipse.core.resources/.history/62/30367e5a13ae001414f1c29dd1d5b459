@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+
+public class _03_WeirdStrings {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine().replaceAll("\\s+", "").replaceAll("[\\/(),|]+", "");
+		
+		System.out.println(input);
+		
+	}
+
+}

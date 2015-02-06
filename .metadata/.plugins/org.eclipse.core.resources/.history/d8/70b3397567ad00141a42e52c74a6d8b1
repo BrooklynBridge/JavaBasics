@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class P02_Generate3LetterWords {
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String input = sc.next();
+		int diffLetters = input.length();
+		
+		for (int i = 0; i < diffLetters; i++) {
+			for (int j = 0; j < diffLetters; j++) {
+				for (int j2 = 0; j2 < diffLetters; j2++) {
+					
+					System.out.printf("%c%c%c\n",input.charAt(i),input.charAt(j),input.charAt(j2));
+				}
+			}
+		}
+	}
+}

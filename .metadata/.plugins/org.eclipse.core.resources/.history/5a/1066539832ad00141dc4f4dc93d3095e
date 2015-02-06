@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+
+public class _02_Durts {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		int cX = scan.nextInt();
+		int cY = scan.nextInt();
+		
+		int radius = scan.nextInt();
+		int n = scan.nextInt();
+	
+		int[] darts = new int[n];		
+		for (int i = 0; i < darts.length; i++) {
+			darts[i] = scan.nextInt();
+		}
+		
+		for (int i : darts) {
+			System.out.println(i + " ");
+		}
+		
+	}
+
+}

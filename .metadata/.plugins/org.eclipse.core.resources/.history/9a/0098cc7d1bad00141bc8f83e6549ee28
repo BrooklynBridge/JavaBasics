@@ -1,0 +1,35 @@
+import java.time.LocalDate;
+import java.util.Scanner;
+
+
+public class _01_Timespan {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+
+		//parse the start time
+		String[] input1 = scan.nextLine().split(":");
+		//store the hours, minutes and seconds in an array
+		int[] date1 = new int[input1.length];
+		for (int i = 0; i < date1.length; i++) {
+			date1[i] = Integer.parseInt(input1[i]);
+		}
+		
+		//parse the end time
+		String[] input2 = scan.nextLine().split(":");
+		//store the hours, minutes and seconds in an array
+		int[] date2 = new int[input2.length];
+		for (int i = 0; i < date2.length; i++) {
+			date2[i] = Integer.parseInt(input2[i]);
+		}
+		
+		LocalDate start = LocalDate.of(date1[0], date1[1], date1[1]);
+		LocalDate end = LocalDate.of(date2[0], date2[1], date2[1]);
+		
+		System.out.println(start);
+		System.out.println(end);
+	}
+
+}

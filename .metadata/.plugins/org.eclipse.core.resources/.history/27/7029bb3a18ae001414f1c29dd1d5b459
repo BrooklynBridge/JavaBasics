@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+
+public class _03_WeirdStrings {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine().replaceAll("\\s+", "").replaceAll("[\\/(),|]+", "");
+		
+		String[] words = input.split("[^a-zA-Z]+");
+		
+		
+		int maxSum = 0;
+		int maxIndex1 = 0;
+		int maxIndex2 = 0;
+		
+		for (int i = 0; i < words.length - 1; i++) {
+			String word1 = words[i];
+			String word2 = words[i + 1];
+			
+			int weight1 = returnWordWeight(word1);
+			int weight2 = returnWordWeight(word2);
+			int sum = weight1 + weight2;
+			
+			if (sum >= maxSum) {
+				maxSum = sum;
+				maxIndex1 = i;
+				maxIndex2 = i + 1;
+			}
+		}
+		System.out.println(words[maxIndex1]);
+		System.out.println(words[maxIndex2]);
+	}
+
+	private static int returnWordWeight(String word) {	
+		int weight = 0;
+		for (int i = 0; i < word.length(); i++) {
+			char letter = word.charAt(i);
+			weight += returnLetterWeight(letter);
+		}	
+		return weight;
+	}
+
+	private static int returnLetterWeight(char letter) {
+		int weight = 0;
+		int asciiCode = letter;
+		if (asciiCode >= 65 && asciiCode <= 90) {
+			weight = asciiCode - 64;
+		} else if (asciiCode >= 97 && asciiCode <= 122) {
+			weight = asciiCode - 96;
+		}
+		return weight;
+	}
+
+}

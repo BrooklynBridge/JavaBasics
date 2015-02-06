@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+
+public class _02_SumCardsNew {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		
+		String[] input = scan.nextLine().split("\\s+");
+		
+		String[] cards = new String[input.length];
+		for (int i = 0; i < cards.length; i++) {
+			
+			String card = input[i].substring(0, input[i].length() - 1);
+			cards[i] = card;
+		}
+		
+		for (String string : cards) {
+			System.out.print(string + " ");
+		}
+	}
+
+}

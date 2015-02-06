@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+
+public class _01_CognateWords {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+
+		String[] words = scan.nextLine().split("\\W+");
+		
+		for (String string : words) {
+			System.out.println(string);
+		}
+	}
+
+}

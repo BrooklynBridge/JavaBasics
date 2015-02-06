@@ -1,0 +1,34 @@
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+
+public class _03_ExamScore {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		
+		Map<Integer, TreeMap<String, Double>> examData = new TreeMap<>();
+		
+		for (int i = 0; i < 1000; i++) {
+			String line = scan.nextLine().replaceAll("[|]+", "").trim();
+			if (i > 2) {
+				
+				String[] input = line.split("\\s+");
+				String name = input[0] + " " + input[1];
+				int examScore = Integer.parseInt(input[2]);
+				double grade = Double.parseDouble(input[3]);
+				
+				int num = 1;
+			}			
+			if (i > 3 && line.charAt(0) == '-') {
+				System.out.println(i);
+				break;
+			}
+		}
+
+	}
+
+}

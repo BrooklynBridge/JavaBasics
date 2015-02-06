@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+
+public class _04_StraightFlush {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		String[] input = scan.nextLine().trim().replaceAll(",", "").split("\\s+");
+		
+		for (String string : input) {
+			System.out.println(string);
+		}
+
+	}
+
+}

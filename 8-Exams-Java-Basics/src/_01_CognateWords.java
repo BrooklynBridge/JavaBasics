@@ -1,0 +1,58 @@
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
+
+
+public class _01_CognateWords {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		
+		//parse and split the input string into words
+		String[] words = scan.nextLine().split("[^a-zA-Z]+");
+		
+		//create a set to store the unique results
+		Set<String> results = new TreeSet<String>();
+		
+		//variable to store if a solution was found
+		boolean validSolution = false;
+		
+		//go through all the three word combinations
+		for (int i = 0; i < words.length; i++) {
+			for (int j = 0; j < words.length; j++) {
+				for (int k = 0; k < words.length; k++) {
+					
+					//only check combinations from different words
+					if ((i != j && j != k) && i != k) {
+											
+						String first = words[i] + words[j];
+						String second = words[k];
+						
+						//check if a combination was found
+						if (first.equals(second)) {
+							
+							//assemble the result as a string
+							String result = words[i] + "|" + words[j] + "=" + words[k];
+							
+							//print it only if it has not printed before
+							if (results.contains(result) == false) {
+								System.out.println(result);
+								//add any new printed results to the set
+								results.add(result);
+							}
+							//a solution was found, update the variable
+							validSolution = true;
+						}
+					}
+				}
+			}
+		}
+		//print No if no solution was found
+		if (validSolution == false) {
+			System.out.println("No");
+		}
+	}
+
+}

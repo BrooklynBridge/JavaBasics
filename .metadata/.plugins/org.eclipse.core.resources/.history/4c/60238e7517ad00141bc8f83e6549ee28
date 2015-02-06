@@ -1,0 +1,80 @@
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class _02_MagicSum {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.ROOT);
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		
+		//parse the value of D
+		int d = scan.nextInt();
+		scan.nextLine();
+		
+		//create a list to store the integers
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		
+		while (true) {
+			//parse the input from each line
+			String input = scan.nextLine();
+			
+			//leave the infinite loop if the End command is received
+			if (input.equals("End")) {
+				break;
+			}
+			
+			//add each number to the list
+			nums.add(Integer.parseInt(input));
+		}
+		
+		int magicSum = 0;
+		int magicSumMax = Integer.MIN_VALUE;
+		int a = 0;
+		int b = 0;
+		int c = 0;
+		
+		boolean validResult = false;
+		
+		for (int i = 0; i < nums.size(); i++) {
+			for (int j = 0; j < nums.size(); j++) {
+				for (int k = 0; k < nums.size(); k++) {	
+					
+					//avoid repeating the same number from the list
+					if (i != j && j != k) {
+		
+						//calculate the sum
+						int sum = nums.get(i) + nums.get(j) + nums.get(k);	
+						
+						//check if the sum is a magic one						
+						if (sum % d == 0) {
+							//if it is, store it in the variable
+							magicSum = sum;
+							//store the current magic sum if it is the largest
+							if (magicSum > magicSumMax) {
+								magicSumMax = magicSum;
+								//store the numbers that make up the sum too
+								a = nums.get(i);
+								b = nums.get(j);
+								c = nums.get(k);						
+							}
+							//update the found result variable
+							validResult = true;
+						}
+					}
+				}
+			}
+		}	
+		//print No if no magic sums were found
+		if (validResult == false) {
+			System.out.println("No");
+		} else {
+			String result = String.format("(%s + %s + %s) % %s = %s", a, b, c, magicSumMax);
+			System.out.println(result);
+		}
+	}
+
+}

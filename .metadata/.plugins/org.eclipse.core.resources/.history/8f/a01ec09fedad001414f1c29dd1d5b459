@@ -1,0 +1,55 @@
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+
+public class _04_Orders {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		
+		int n = scan.nextInt();
+		scan.nextLine();
+		
+		Map<String, TreeMap<String, Integer>> products = new LinkedHashMap<>();
+		
+		for (int i = 0; i < n; i++) {
+			String[] input = scan.nextLine().trim().split("\\s+");
+			
+			String customer = input[0];
+			int amount = Integer.parseInt(input[1]);
+			String key = input[2];
+			
+			TreeMap<String, Integer> order = new TreeMap<String, Integer>();
+			
+			if (products.containsKey(key) == false) {
+				order.put(customer, amount);
+				products.put(key, order);			
+			} else {
+				order = products.get(key);
+				int count = order.get(customer);
+				count += amount;
+				order.put(customer, count);
+				products.put(key, order);
+			}			
+		}
+		
+		TreeMap<String, Integer> orders = new TreeMap<String, Integer>();
+		
+		for (String key : products.keySet()) {
+			orders = products.get(key);
+			System.out.print(key + ": ");
+			for (String customer : orders.keySet()) {
+				int count = orders.get(customer);
+				System.out.print(customer + " " + count);
+			}
+			System.out.println();
+		}
+		
+
+	}
+
+}

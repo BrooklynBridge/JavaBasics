@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+
+public class _01_Timespan {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+
+		//parse the start time
+		String[] input1 = scan.nextLine().split(":");
+		//store the hours, minutes and seconds in an array
+		int[] start = new int[input1.length];
+		for (int i = 0; i < start.length; i++) {
+			start[i] = Integer.parseInt(input1[i]);
+		}
+
+		//parse the end time
+		String[] input2 = scan.nextLine().split(":");
+		//store the hours, minutes and seconds in an array
+		int[] end = new int[input2.length];
+		for (int i = 0; i < end.length; i++) {
+			end[i] = Integer.parseInt(input2[i]);
+		}
+			
+		//calculate each time in seconds
+		long startSeconds = start[0] * 3600 + start[1] * 60 + start[2];
+		long endSeconds = end[0] * 3600 + end[1] * 60 + end[2];
+		
+		//calculate the difference in seconds
+		long difference = startSeconds - endSeconds;
+		
+		//calculate difference in hours, minutes and seconds
+		long hours = difference / 3600;
+		long minutes = (difference % 3600) / 60;
+		long seconds = difference % 60;
+		
+		//print the result on the console
+		System.out.print(hours + ":");
+		if (minutes < 10) {
+			System.out.print("0" + minutes + ":");
+		} else {
+			System.out.print(minutes + ":");
+		}
+		if (seconds < 10) {
+			System.out.print("0" + seconds);
+		} else {
+			System.out.print(seconds);
+		}	
+	}
+
+}

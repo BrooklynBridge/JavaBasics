@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.util.TreeSet;
+
+
+public class _01_CognateWords {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+
+		String[] input = scan.nextLine().split("\\W+");
+		
+		TreeSet<String> words = new TreeSet<String>();
+		
+		for (int i = 0; i < input.length; i++) {
+			words.add(input[i]);
+		}
+		
+		for (String string : words) {
+			System.out.println(string);
+		}
+	}
+
+}

@@ -10,28 +10,32 @@ public class _09_PointsInsideTheHouse {
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		
-		double x = 12.5;//scan.nextDouble();
-		double y = 6;//scan.nextDouble();
+		double x = scan.nextDouble();
+		double y = scan.nextDouble();
 		
 		boolean insideA = (x >= 12.5) && (x <= 17.5) && (y >= 8.5) && (y <= 13.5);
 		boolean insideB = (x >= 20) && (x <= 22.5) && (y >= 8.5) && (y <= 13.5);
-		
-		//position = sign( (Bx-Ax)*(Y-Ay) - (By-Ay)*(X-Ax) )
-		
+			
 		double aX = 12.5;
 		double aY = 8.5;
 		double bX = 17.5;
 		double bY = 3.5;
 		
-		int position1 = (int)((bX-aX)*(y-aY) - (bY-aY)*(x-aX));
+		double position1 = (bX - aX) * (y - aY) - (bY - aY) * (x - aX);
 		
 		aX = 22.5;
 		aY = 8.5;
 		
-		int position2 = (int)((bX-aX)*(y-aY) - (bY-aY)*(x-aX));
+		double position2 = (bX - aX)*(y - aY) - (bY - aY) * (x - aX);
 		
-		boolean insideC = (position1 <= 0) && (position2 <= 0) 
-				&& (x >= 12.5) && (x <= 22.5) && (y >= 3.5) && (y <= 8.5);
+		aX = 12.5;
+		aY = 8.5;
+		bX = 22.5;
+		bY = 8.5;
+		
+		double position3 = (bX - aX)*(y - aY) - (bY - aY) * (x - aX);
+		
+		boolean insideC = ((position1 >= 0) && (position2 <= 0)) && (position3 <= 0);
 		
 		boolean inside = insideA || insideB || insideC;
 		

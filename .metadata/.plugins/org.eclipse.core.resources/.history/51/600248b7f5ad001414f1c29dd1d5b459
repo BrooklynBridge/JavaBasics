@@ -1,0 +1,33 @@
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+
+public class _04_LogsAggregator {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		scan.nextLine();
+		
+		Map<String, TreeMap<String, Integer>> log = new TreeMap<>();
+		
+		for (int i = 0; i < n; i++) {
+			String[] input = scan.nextLine().trim().split("\\s+");
+			String ipAddress = input[0];
+			String user = input[1];
+			int duration = Integer.parseInt(input[2]);
+			
+			TreeMap<String, Integer> data = new TreeMap<>();
+			
+			if (log.containsKey(user) == true) {
+				data = log.get(user);
+			}
+			data.put(ipAddress, duration);
+			log.put(user, data);
+		}
+	}
+
+}

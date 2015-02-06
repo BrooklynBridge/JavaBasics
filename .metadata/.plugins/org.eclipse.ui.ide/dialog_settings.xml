@@ -12,14 +12,24 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\Nick\workspace\BrickBreaker"/>
 			<item value="C:\Users\Nick\Desktop\eval\JavaHomework"/>
 			<item value="C:\Users\Nick\Desktop\eval\Intro-Java-Homework"/>
 			<item value="C:\Users\Nick\workspace\Intro-Java-Homework-eval1"/>
 			<item value="C:\Users\Nick\workspace\Demos-4. Java-Collections-Basics"/>
-			<item value="C:\Users\Nick\workspace\Home-Loops-Methods-Classes-Homework"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
 		</list>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="116" key="DIALOG_X_ORIGIN"/>
+		<item value="318" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

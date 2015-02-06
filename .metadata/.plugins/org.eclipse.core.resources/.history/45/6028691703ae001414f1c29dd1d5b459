@@ -1,0 +1,49 @@
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+
+public class _03_ExamScore {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		
+		Map<Integer, TreeMap<String, Double>> examData = new TreeMap<>();
+		
+		for (int i = 0; i < 1000; i++) {
+			//parse each line
+			String line = scan.nextLine().replaceAll("[|]+", "").trim();
+			
+			//leave the loop if the last line is reached
+			if (i > 3 && line.charAt(0) == '-') {
+				break;
+			}
+			//split the string into variables and perform calculations
+			if (i > 2) {				
+				String[] input = line.split("\\s+");
+				
+				//the exam score is the key to examData
+				int key = Integer.parseInt(input[2]);
+				String name = input[0] + " " + input[1];				
+				double grade = Double.parseDouble(input[3]);
+					
+				//store the data in the map
+				if (examData.containsKey(key) == false) {
+					TreeMap<String, Double> grades = new TreeMap<>();
+					grades.put(name, grade);
+					examData.put(key, grades);
+				} else {
+					TreeMap<String, Double> grades = examData.get(key);
+					grades.put(name, grade);
+					examData.put(key, grades);
+				}
+			}					
+		}
+		//print the result
+		for (Integer score : examData.keySet()) {
+			System.out.println(score);
+		}
+	}
+}

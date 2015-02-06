@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+
+public class _03_WeirdStrings {
+
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine().replaceAll("\\s+", "").replaceAll("[\\/(),|]+", "");
+		
+		String[] words = input.split("[^a-zA-Z]+");
+		
+		for (String string : words) {
+			System.out.println(string);
+		}
+		
+	}
+
+}

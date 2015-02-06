@@ -1,0 +1,64 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class P06_RandomHandsOfSixCards {
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		Random rnd = new Random();
+		int numberOfHands = sc.nextInt();
+		String[] cardFaces = new String[] {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
+		char[] suits = new char[] {'\u2660','\u2665','\u2666','\u2663'};
+		String[] cards = new String[52];
+		int tool = 0;
+		for (int i = 0; i < 13; i++) {
+			for (int j = 0; j < 4; j++) {
+			cards[tool] = cardFaces[i] + suits[j];
+			tool++;
+			}
+		}
+		for (int i = 0; i < numberOfHands; i++) {
+			
+			int randomNum = rnd.nextInt(2598961);
+			int[] currentIndices = randomIndices(randomNum);
+			System.out.printf("%s %s %s %s %s\n",cards[currentIndices[0]],cards[currentIndices[1]]
+					,cards[currentIndices[2]],cards[currentIndices[3]],cards[currentIndices[4]]);
+		}
+		
+	}
+	static int[] randomIndices(int n) {
+		int tool = 0;
+		int[] indices = new int[5];
+		outerLoop:
+		for (int i = 0; i < 48; i++) {
+			for (int j = i+1; j < 49; j++) {
+				for (int j2 = j+1; j2 < 50; j2++) {
+					for (int k = j2+1; k < 51; k++) {
+						for (int k2 = k+1; k2 < 52; k2++) {
+							if (tool == n) {
+							indices[0] = i;
+							indices[1] = j;
+							indices[2] = j2;
+							indices[3] = k;
+							indices[4] = k2;
+							break outerLoop;
+							}
+							tool++;
+						}
+					}
+				}
+			}
+		}
+		return indices;
+	}
+	
+}
+
+
+
+
+
+
+
+

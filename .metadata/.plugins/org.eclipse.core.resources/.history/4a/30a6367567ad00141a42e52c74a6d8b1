@@ -1,0 +1,33 @@
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.Scanner;
+
+
+public class P07_DaysBetweenTwoDates {
+	public static void main(String[] args) throws ParseException {
+		
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String start = sc.nextLine();
+		String end = sc.nextLine();
+		
+		LocalDate startDate = LocalDate.parse(start, DateTimeFormatter.ofPattern("d-MM-yyyy"));
+		LocalDate endDate = LocalDate.parse(end, DateTimeFormatter.ofPattern("d-MM-yyyy"));
+
+		System.out.println(ChronoUnit.DAYS.between(startDate,endDate));
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

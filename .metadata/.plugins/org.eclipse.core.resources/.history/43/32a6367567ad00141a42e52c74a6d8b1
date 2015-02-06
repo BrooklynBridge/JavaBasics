@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class P05_AngleUnitConverter {
+	public static void main(String[] args) {
+		
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		sc.nextLine();
+		String[] input = new String[n];
+		for (int i = 0; i < n; i++) {
+			input[i] = sc.nextLine();
+		}
+		for (int i = 0; i < n; i++) {
+			
+			if (input[i].split(" ")[1].equals("deg")) {
+				System.out.printf("%.6f\n",degreesToRad(Double.parseDouble(input[i].split(" ")[0])));
+			}
+			else {
+				System.out.printf("%.6f\n",radiansToDeg(Double.parseDouble(input[i].split(" ")[0])));
+			}
+		}
+	}
+	static double degreesToRad(double degrees) {
+		return (degrees*Math.PI)/180;
+	}
+	static double radiansToDeg(double radians) {
+		return (radians*180)/Math.PI;
+	}
+}

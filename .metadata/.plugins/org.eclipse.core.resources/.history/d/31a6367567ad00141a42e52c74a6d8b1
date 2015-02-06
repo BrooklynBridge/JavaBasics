@@ -1,0 +1,58 @@
+
+public class P03_FullHouse {
+	public static void main(String[] args) {
+			
+		
+		String[] cardFaces = new String[] {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
+		char[] suits = new char[] {'\u2660','\u2665','\u2666','\u2663'};
+		String[] cards = new String[52];
+		int tool = 0;
+		for (int i = 0; i < 13; i++) {
+			for (int j = 0; j < 4; j++) {
+				
+			cards[tool] = cardFaces[i] + suits[j];
+			tool++;
+			}
+		}
+		int counter = 0;
+		for (int i = 0; i < 48; i++) {
+			for (int j = i+1; j < 49; j++) {
+				for (int j2 = j+1; j2 < 50; j2++) {
+					for (int k = j2+1; k < 51; k++) {
+						for (int k2 = k+1; k2 < 52; k2++) {
+							int [] indices = new int[] {i,j,j2,k,k2};
+							if (isFullHouse(indices)) {
+							System.out.printf("%s %s %s %s %s-> No:%d\n",
+											cards[i],cards[j],cards[j2],cards[k],cards[k2],counter+1);
+							counter++;
+							}
+						}
+					}
+				}
+			}
+		}
+		System.out.printf("%d full houses",counter);
+	}
+//*Because of the way we generate the whole set of different combinations, the full house hands
+// will always be ordered. This means that "2 2 2 3 3" and "2 2 3 3 3" are feasible hands and "2 3 2 3 2"
+// or "2 3 3 2 2" are not. The isFullHouse method checks if the first three cards and the last two
+// or the first two and the last three have the same faces. There are 2 598 960 different hands and for
+// each hand we check if it is a full house.
+	static boolean isFullHouse(int[] indices) {
+		boolean x1 = (indices[0]/4==indices[1]/4 && indices[1]/4==indices[2]/4) && (indices[3]/4==indices[4]/4);
+		boolean x2 = (indices[0]/4==indices[1]/4) && (indices[2]/4==indices[3]/4 && indices[3]/4==indices[4]/4);
+		return x1||x2;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
