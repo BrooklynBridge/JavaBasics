@@ -6,6 +6,7 @@ import java.util.HashSet;
 public class StraightFlush {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner (System.in);
 		String[] inputCards = sc.nextLine().split("\\W+");
 		

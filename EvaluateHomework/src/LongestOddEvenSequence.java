@@ -5,6 +5,7 @@ public class LongestOddEvenSequence {
 	public static void main(String[] args) {
 		
 		// Read and parse the input numbers
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		String inputLine = scanner.nextLine();
 		String[] numbers = inputLine.split("[ ()]+");
