@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class _02_InstructionSet_Broken {
+
+    public static void main(String[] args) {
+
+	Scanner input = new Scanner(System.in);
+	String opCode = input.nextLine();
+	long result = 0;
+
+	while (!opCode.equals("END")) {
+	    String[] codeArgs = opCode.split(" ");
+	    long operandOne = Long.parseLong(codeArgs[1]);
+
+	    switch (codeArgs[0]) {
+	    case "INC":
+		operandOne++;
+		result = operandOne;
+		break;
+	    case "DEC":
+		operandOne--;
+		result = operandOne;
+		break;
+	    case "ADD":
+		long operandTwo = Long.parseLong(codeArgs[2]);
+		result = operandOne + operandTwo;
+		break;
+	    case "MLA":
+		operandTwo = Long.parseLong(codeArgs[2]);
+		result =  operandOne * operandTwo;
+		break;
+	    }
+	    System.out.println(result);
+	    opCode = input.nextLine();
+	}	
+    }
+}

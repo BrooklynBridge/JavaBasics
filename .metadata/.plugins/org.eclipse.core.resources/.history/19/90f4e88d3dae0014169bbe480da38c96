@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class InstructionSet {
+    static Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {
+        
+        String opCode = input.nextLine();
+        
+        while (!opCode.equals("END")) {
+        	
+            String[] codeArgs = opCode.split(" ");
+
+            long result = 0;
+            switch (codeArgs[0]) {
+                case "INC": {
+                	//Changed from int to long
+                    long operandOne = Long.parseLong(codeArgs[1]);
+                    //Fixed to +1 to actually increase the result
+                    result = operandOne + 1;
+                    break;
+                }
+                case "DEC": {
+                	//Changed from int to long
+                    long operandOne = Long.parseLong(codeArgs[1]);
+                    //Fixed to -1 to actually decrease the result
+                    result = operandOne - 1;
+                    break;
+                }
+                case "ADD": {
+                    long operandOne  = Long.parseLong(codeArgs[1]);
+                    long operandTwo = Long.parseLong(codeArgs[2]);
+                    result = operandOne + operandTwo;
+                    break;
+                }
+                case "MLA": {
+                	//Changed from int to long
+                    long operandOne  = Long.parseLong(codeArgs[1]);
+                    long operandTwo = Long.parseLong(codeArgs[2]);
+                    result = (long)operandOne * operandTwo;
+                    break;
+                }
+                default:
+                    break;
+            }
+            //Added opCode new input line for "END"
+            opCode = input.nextLine();
+            System.out.println(result);
+        }
+    }
+}

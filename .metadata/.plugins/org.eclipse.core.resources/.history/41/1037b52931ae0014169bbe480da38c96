@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class _03_ValidUsernames {
+
+	public static void main(String[] args) {
+
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+
+		String[] input = scan.nextLine().trim().replaceAll("\\\\", " ")
+				.split("[ /()]+");
+
+		String nameRegEx = "[a-zA-Z]+[a-zA-z0-9_]+";
+
+		ArrayList<String> validNames = new ArrayList<String>();
+
+		for (int i = 0; i < input.length; i++) {
+			String name = input[i];
+			if (name.matches(nameRegEx) && name.length() >= 3
+					&& name.length() <= 25) {
+				validNames.add(name);
+			}
+		}
+		
+		int maxLength = 0;
+		int index = 0;
+		
+		for (int i = 0; i < validNames.size() - 1; i++) {
+			int length1 = validNames.get(i).length();
+			int length2 = validNames.get(i + 1).length();
+			int currentLength = length1 + length2;
+			
+			if (currentLength > maxLength) {
+				maxLength = currentLength;
+				index = i;
+			}
+		}
+		
+		System.out.println(validNames.get(index));
+		System.out.println(validNames.get(index + 1));
+	}
+
+}

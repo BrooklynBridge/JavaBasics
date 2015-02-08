@@ -1,0 +1,33 @@
+import java.awt.List;
+import java.sql.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class Problem10_ExtractAllUniqueWords {
+public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+	
+	String str = scanner.nextLine();
+	
+	String[] splited= str.split("\\W+");
+	splited[0].toLowerCase();
+	List words = new List();
+	
+	System.out.println(splited.length);
+	
+	Arrays.sort(splited);
+	
+	for (int i = 0; i < splited.length; i++) {
+		words.add(splited[i].toLowerCase());
+	}
+	for (int i = 0; i < words.getItemCount()-1; i++) {		
+			if (words.getItem(i).equals(words.getItem(i+1)) ) {
+				words.remove(i);
+			}
+	}
+	for (int i = 0; i < words.getItemCount(); i++) {
+		System.out.printf("%s ", words.getItem(i));
+	}
+}
+}

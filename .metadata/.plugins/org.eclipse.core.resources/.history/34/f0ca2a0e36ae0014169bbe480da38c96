@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class _09_CombineListsOfLetters {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	    String valueAsString = sc.nextLine();
+	    char[] valueAsArray = valueAsString.toCharArray();
+		ArrayList<Character> value = new ArrayList<Character>();
+		for (int i = 0; i < valueAsArray.length; i++) {
+			value.add(valueAsArray[i]);
+		}
+		char[] secondLine = sc.nextLine().toCharArray();
+		for (int i = 0; i < secondLine.length; i++) {
+			int index = valueAsString.indexOf(secondLine[i]);
+			if ( index < 0) {
+				value.add(secondLine[i]);
+			}
+		}
+		for (char c : value) {
+			System.out.print(c);
+		}
+	}
+
+}

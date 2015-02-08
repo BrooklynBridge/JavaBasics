@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+
+public class _07_CountSubstringOccurrences {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String value = sc.nextLine().toUpperCase();
+		String target = sc.nextLine().toUpperCase();
+		int count = 0;
+		int index = 0;
+		do{
+			index = value.indexOf(target, index);
+			if (index >= 0) {
+				count++;
+			}
+			index++;
+		}while (index > 0);
+		System.out.println(count);
+	}
+
+}

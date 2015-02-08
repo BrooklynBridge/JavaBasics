@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
+
+
+public class _10_ExtractAllUniqueWords {
+
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String[] value = sc.nextLine().toLowerCase().split("\\W+");
+		HashSet<String> sValue = new HashSet();
+		for (String str : value) {
+			boolean have = sValue.add(str);
+			if (!have) {
+				sValue.remove(str);
+			}
+		}
+		List sortedList = new ArrayList(sValue);
+		Collections.sort(sortedList);
+		System.out.println(sortedList);
+	}
+
+}

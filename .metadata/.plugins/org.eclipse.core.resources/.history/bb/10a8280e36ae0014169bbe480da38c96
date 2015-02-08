@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class _02_SequencesOfEqualStrings {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String[] value = sc.nextLine().split(" ");
+		for (int i = 0; i < value.length; i++) {
+			if (i < value.length - 1) {
+				System.out.print(value[i].equals(value[i + 1]) ?String.format("%s ", value[i]): String.format("%s\n",value[i]));
+			}else {
+				System.out.println(value[i]);
+			}			
+		}
+	}
+	
+}

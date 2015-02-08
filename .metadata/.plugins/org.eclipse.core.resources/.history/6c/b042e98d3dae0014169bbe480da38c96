@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class BitCarousel{
+
+    public static void main(String[] args) {
+    	@SuppressWarnings("resource")
+        Scanner input = new Scanner(System.in);
+
+        int number = Byte.parseByte(input.nextLine());
+        byte rotations = Byte.parseByte(input.nextLine());
+
+        for (int i = 0; i < rotations; i++) {
+            String direction = input.nextLine();
+            
+            //Changed == with .equal() because we can't compare strings with ==
+            if (direction.equals("right")) {
+            	int rightMostBit = number & 1;
+                number >>= 1;
+                number |= rightMostBit << 5; //changed 6 to 5
+                
+              //Changed == with .equal() because we can't compare strings with ==   
+            } else if (direction.equals("left")) {
+            	int leftMostBit = (number >> 5) & 1; //changed 6 to 5
+                number <<= 1;
+                number |= leftMostBit;
+                number = number & ~(1<<6);  //making the last bit to 0
+            }
+        }
+
+        System.out.println(number);
+    }
+}

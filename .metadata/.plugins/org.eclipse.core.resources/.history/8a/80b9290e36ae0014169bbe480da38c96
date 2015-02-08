@@ -1,0 +1,39 @@
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Scanner;
+
+
+public class _11_MostFrequentWord {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String[] value = sc.nextLine().toLowerCase().split("\\W+");
+		HashMap<String,Integer> r =new HashMap<String,Integer>();
+		for (int i = 0; i < value.length; i++) {
+			Integer v = r.get(value[i]);
+			if (v == null) {
+				v = 1;
+				r.put(value[i], v);
+			}else {
+				r.remove(value[i]);
+				v++;
+				r.put(value[i], v);
+			}
+		}
+		int max = 0;
+		for (int i : r.values()) {
+			if (i > max) {
+				max = i;
+			}
+		}
+		HashSet<String> result = new HashSet<String>();
+		for (String string : value) {
+			int v = r.get(string);
+			if (v == max) {
+				result.add(String.format("%s -> %s times",string,v));			
+			}
+		}
+		System.out.println(result);
+	}
+
+}

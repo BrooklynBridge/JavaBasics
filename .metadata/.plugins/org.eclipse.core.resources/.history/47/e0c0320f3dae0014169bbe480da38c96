@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class InstructionSet {
+       
+    public static Scanner input = new Scanner(System.in);
+   
+            public static void main(String[] args) {
+ 
+                String opCode = input.nextLine();
+               
+                while (!opCode.equals("END")) {
+                    String[] codeArgs = opCode.split(" ");
+ 
+                    long result = 0;
+                    switch (codeArgs[0]) {
+                        case "INC": {
+                            long operandOne = Long.parseLong(codeArgs[1]);
+                            operandOne+=1;
+                            result = operandOne;
+                            //increasing of operandOne and after that result takes operandOne's value!
+                            break;
+                        }
+                        case "DEC": {
+                            long operandOne = Long.parseLong(codeArgs[1]);
+                            operandOne-=1;
+                            result = operandOne;
+                          //decreasing of operandOne and after that result takes operandOne's value!
+                            break;
+                        }
+                        case "ADD": {
+                            long operandOne  = Long.parseLong(codeArgs[1]);
+                            long operandTwo = Long.parseLong(codeArgs[2]);
+                            result = operandOne + operandTwo;
+                            break;
+                        }
+                        case "MLA": {
+                            long operandOne  = Long.parseLong(codeArgs[1]);
+                            long operandTwo = Long.parseLong(codeArgs[2]);
+                            result = ((long)operandOne * (long)operandTwo);
+                            //first is the casting for every integer and after that is the multiplicity
+                            break;
+                        }
+                        default:
+                            break;
+                    }
+ 
+                    System.out.println(result);
+                    opCode = input.nextLine(); // enter new command or end 
+                   
+                }
+            }
+}

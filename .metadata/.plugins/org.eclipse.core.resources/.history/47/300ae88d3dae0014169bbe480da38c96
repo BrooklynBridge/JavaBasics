@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class BePositive{
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Scanner scn = new Scanner(System.in);
+		
+		int countSequences = scn.nextInt();
+		//Make sure that the scanner goes to the next line
+		scn.nextLine();
+		
+		for (int i = 0; i < countSequences; i++) {
+			//Added regex expression to divide by multiple spaces
+            String[] input = scn.nextLine().split("\\s+");
+			ArrayList<Integer> numbers = new ArrayList<>();
+			
+			for (int j = 0; j < input.length; j++) {
+				if (!input[j].equals("") ) {
+					//Changed i to j and added trim()
+					int num = Integer.parseInt(input[j].trim());
+					numbers.add(num);	
+				}							
+			}
+			
+			boolean found = false;
+			
+			for (int j = 0; j < numbers.size(); j++) {				
+				int currentNum = numbers.get(j);
+				//Changed from > to >= so it can check for 0
+				if (currentNum >= 0) {
+					//Reversed the positions of the conditions(" " and "\n") for correct output
+					System.out.printf("%d%s", currentNum, j == numbers.size() - 1 ? "\n" : " ");
+					found = true;
+				} else{
+					//Added if statement to check if the program goes out of the array
+					if(j + 1 < numbers.size()){
+						currentNum += numbers.get(j + 1);
+										
+					//Reversed the positions of the conditions(" " and "\n") and added j + 1 for correct output
+					if (currentNum >= 0) {
+						System.out.printf("%d%s", currentNum, j + 1  == numbers.size() - 1 ? "\n" : " ");
+						found = true;
+						}
+					}
+					//increasing j so we can jump on the next element
+					j++;
+				}
+			}
+			
+			if (!found) {
+				System.out.println("(empty)");
+			}
+		}		
+	}
+}

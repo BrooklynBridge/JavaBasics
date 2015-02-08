@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class _04_LongestIncreasingSequence {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+        String[] valueInString = sc.nextLine().split(" "); 
+        int[] value = new int[valueInString.length];
+        for (int i = 0; i < value.length; i++) {
+			value[i] = Integer.parseInt(valueInString[i].trim());
+		}
+        ArrayList<Integer> curentSequence = new ArrayList<Integer>();
+        ArrayList<Integer> longestSequence = new ArrayList<Integer>();
+        for (int i = 0; i < value.length; i++) {
+        	curentSequence.add(value[i]);
+        	if (curentSequence.size() > longestSequence.size()) {
+				longestSequence.clear();
+				longestSequence = (ArrayList<Integer>) curentSequence.clone();
+			}
+			if (i < value.length - 1 && value[i] < (value[i +1])){
+			}else {
+				printSequnece(curentSequence);
+				System.out.println();
+				curentSequence.clear();
+			}
+		}
+        System.out.print("Longest: ");
+        printSequnece(longestSequence);
+	}
+
+	private static void printSequnece(ArrayList<Integer> sequence) {
+		for (int i : sequence) {
+			System.out.printf("%s ",i);
+		}
+	}
+
+}

@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+
+public class P2_SequenceOfEqualStrings {
+
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		String[] line = scan.nextLine().split("\\s+");
+		
+		if (line.length == 1) {
+			System.out.println(line[0]);
+		}
+		for (int i = 0; i < line.length - 1; i++) {
+			if (line[i].equals(line[i + 1])) {
+				System.out.print(line[i] + " ");
+			}else {
+				System.out.println(line[i]);
+			}
+		}
+		if (line.length != 1) {
+            System.out.print(line[line.length - 1]);
+		}
+	}
+
+}

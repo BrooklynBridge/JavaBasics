@@ -1,0 +1,25 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class P1_SortArrayOfNumbers {
+
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int n = Integer.parseInt(scan.nextLine());
+		String[] input = scan.nextLine().split("\\s+");
+		int[] numbers = new int[n];
+		
+		for (int i = 0; i < input.length; i++) {
+			numbers[i] = Integer.parseInt(input[i]);
+		}
+		Arrays.sort(numbers);
+		for (int i = 0; i < numbers.length; i++) {
+			System.out.printf("%d ", numbers[i]);
+		}
+		System.out.println();
+	}
+
+}

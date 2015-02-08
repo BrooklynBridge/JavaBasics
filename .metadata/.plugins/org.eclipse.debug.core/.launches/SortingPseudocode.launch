@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/Lab-Algorithms/src/sort/bubble/_01_BubbleSort.java"/>
+<listEntry value="/Java-Lab-Algorithms/src/sort/bubble/_01_BubbleSort.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="sort.bubble._01_BubbleSort"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Lab-Algorithms"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Java-Lab-Algorithms"/>
 </launchConfiguration>

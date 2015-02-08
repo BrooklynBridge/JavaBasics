@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+
+public class _03_ValidUsernames {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		String[] input = scan.nextLine().trim().replaceAll("[\\]+", " ").split("[/() ]+");
+		
+		for (String string : input) {
+			System.out.println(string);
+		}
+
+	}
+
+}

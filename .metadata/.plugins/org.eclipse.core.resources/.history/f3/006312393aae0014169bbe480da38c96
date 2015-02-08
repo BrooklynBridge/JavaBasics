@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+
+public class Problem8_ExtractEmails {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		String str = scanner.nextLine();
+		
+		String[] splited= str.split("\\s+");
+		
+		for (int i = 0; i < splited.length; i++) {
+			if (splited[i].contains("@")) {
+				System.out.println(splited[i]);
+			}
+			
+		}
+}
+}

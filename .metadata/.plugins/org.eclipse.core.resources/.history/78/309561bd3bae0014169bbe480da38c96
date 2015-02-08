@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class P9_CombineListOfLetters {
+
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		char[] mainText = scan.nextLine().replace(" ", "").toCharArray();
+		char[] addedText = scan.nextLine().replace(" ", "").toCharArray();
+		
+		ArrayList<Character> mainList = new ArrayList<>();
+		ArrayList<Character> addedList = new ArrayList<>();
+		for(Character letter:mainText){
+			mainList.add(letter);
+			addedList.add(letter);
+		}
+		
+		for(Character letter:addedText){
+			if(!addedList.contains(letter)){
+				mainList.add(letter);
+			}
+		}
+		for(Character letter:mainList){
+			System.out.print(letter + " ");
+		}
+
+	}
+
+}
