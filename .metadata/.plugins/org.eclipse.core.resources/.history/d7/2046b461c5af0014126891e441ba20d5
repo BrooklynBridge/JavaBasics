@@ -24,7 +24,7 @@ public class _03_LegoBlocks {
 			ArrayList<Integer> row = new ArrayList<>();
 
 			if (i < n) {
-				// add the elements in the rows of the first array in regular order
+				// add the rows of the first array in regular order
 				for (int j = 0; j < input.length; j++) {
 					if (input[j].equals("") == false) {
 						row.add(Integer.parseInt(input[j]));
@@ -32,7 +32,7 @@ public class _03_LegoBlocks {
 				}
 				jaggedArray1.add(row);
 			} else {
-				// add the elements in the rows of the second array in REVERSED order
+				// add the rows of the first array in REVERSED order
 				for (int j = input.length - 1; j >= 0; j--) {
 					if (input[j].equals("") == false) {
 						row.add(Integer.parseInt(input[j]));
@@ -64,11 +64,11 @@ public class _03_LegoBlocks {
 
 			// assemble the rows of the new array
 			for (int i = 0; i < jaggedArray1.size(); i++) {
-				// get the rows from each array
+				// get the rows from each jagged array
 				ArrayList<Integer> start = jaggedArray1.get(i);
 				ArrayList<Integer> end = jaggedArray2.get(i);
-				// add the elements from the second array
-				// to each row from the first
+				// add the elements from the second array to each row from the
+				// first
 				for (int j = 0; j < end.size(); j++) {
 					start.add(end.get(j));
 				}
@@ -89,7 +89,7 @@ public class _03_LegoBlocks {
 				cellsCount += jaggedArray1.get(i).size()
 						+ jaggedArray2.get(i).size();
 			}
-			// print the result cell count
+			// print the result if the arrays are not perfectly matched
 			System.out.println("The total number of cells is: " + cellsCount);
 		}
 	}
