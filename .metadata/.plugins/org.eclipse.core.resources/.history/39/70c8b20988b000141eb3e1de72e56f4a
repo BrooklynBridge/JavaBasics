@@ -53,7 +53,6 @@ public class _03_LegoBlocks {
 					+ jaggedArray2.get(i).size();
 			if (currentRowLength != firstRowLength) {
 				perfectlyMatched = false;
-				break;
 			}
 		}
 
@@ -69,7 +68,7 @@ public class _03_LegoBlocks {
 				ArrayList<Integer> start = jaggedArray1.get(i);
 				ArrayList<Integer> end = jaggedArray2.get(i);
 				// add the elements from the second array
-				// to each row from the first array
+				// to each row from the first
 				for (int j = 0; j < end.size(); j++) {
 					start.add(end.get(j));
 				}
@@ -77,13 +76,12 @@ public class _03_LegoBlocks {
 				matchedArray.add(start);
 			}
 
-			// print the result on the console
+			// print the result on the console! 400/400!!!
 			for (ArrayList<Integer> arrayList : matchedArray) {
 				System.out.println(arrayList);
 			}
 
 		} else {
-			// if the arrays are not perfectly matched
 			// count the total number of cells in both arrays
 			int cellsCount = 0;
 
@@ -91,7 +89,7 @@ public class _03_LegoBlocks {
 				cellsCount += jaggedArray1.get(i).size()
 						+ jaggedArray2.get(i).size();
 			}
-			// print the cell count
+			// print the result cell count
 			System.out.println("The total number of cells is: " + cellsCount);
 		}
 	}

@@ -83,7 +83,6 @@ public class _03_LegoBlocks {
 			}
 
 		} else {
-			// if the arrays are not perfectly matched
 			// count the total number of cells in both arrays
 			int cellsCount = 0;
 
